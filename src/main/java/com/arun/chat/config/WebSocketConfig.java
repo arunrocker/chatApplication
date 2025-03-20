@@ -25,7 +25,11 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer{
 	
 	public void configureMessageBroker(MessageBrokerRegistry registry) {
 		registry.setApplicationDestinationPrefixes("/app"); // For every websocket Request should have this prefix
-		registry.enableStompBrokerRelay("/topic").setRelayHost(hostName).setRelayPort(Integer.parseInt(port)).setClientLogin(userName)
-		.setClientPasscode(password);
+		 registry.enableSimpleBroker("/topic");
+		/*
+		 * registry.enableStompBrokerRelay("/topic").setRelayHost(hostName).setRelayPort
+		 * (Integer.parseInt(port)).setClientLogin(userName)
+		 * .setClientPasscode(password);
+		 */
 	}
 }
