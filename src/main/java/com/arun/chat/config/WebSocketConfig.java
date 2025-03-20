@@ -20,7 +20,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer{
 	private String password;
 	
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
-			registry.addEndpoint("/websocketChat")..setAllowedOriginPatterns("*").withSockJS(); // Just for webSocket Connection
+			registry.addEndpoint("/websocketChat").setAllowedOriginPatterns("*").withSockJS(); // Just for webSocket Connection
 	}
 	
 	public void configureMessageBroker(MessageBrokerRegistry registry) {
