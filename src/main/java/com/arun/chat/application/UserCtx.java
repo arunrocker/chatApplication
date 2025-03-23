@@ -25,8 +25,8 @@ public class UserCtx {
 	public String getUser(int userId) {
 		return users.get(userId);
 	}
-	public String removeUser(int userId) {
-		return users.remove(userId);
+	public Integer getId() {
+		return userId;
 	}
 
 }

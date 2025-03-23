@@ -22,9 +22,8 @@ public class WebChatController {
 	@SendTo("/topic/chat")
 	public WebChatMessage newUser(@Payload WebChatMessage webSocketChatMessage,
 			SimpMessageHeaderAccessor headerAccessor) {
-		headerAccessor.getSessionAttributes().put("username", userCtx.getUser(1));
-		webSocketChatMessage.setSender(userCtx.getUser(1));
-		userCtx.removeUser(1);
+		headerAccessor.getSessionAttributes().put("username", userCtx.getUser(userCtx.getId()));
+		webSocketChatMessage.setSender(userCtx.getUser(userCtx.getId()));
 		return webSocketChatMessage;
 	}
 }
